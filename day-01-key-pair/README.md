@@ -34,6 +34,98 @@ A key pair is used to securely connect to EC2 instances.
 6. Click **Create** and download the `.pem` file
 
 ---
+# RSA vs ED25519 SSH Keys
+
+| Feature | RSA | ED25519 |
+|----------|----------|----------|
+| Security | Good (with 3072/4096 bits) | Very strong |
+| Key Size | Large | Small |
+| Performance | Slower | Faster |
+| Key Generation | Slower | Faster |
+| Public Key Length | Longer | Shorter |
+| Compatibility | Supported everywhere | Supported on modern systems |
+| Recommended Today | Yes (legacy compatibility) | ✅ Preferred |
+
+## RSA
+
+### Generate RSA Key
+
+```bash
+ssh-keygen -t rsa -b 4096
+```
+
+### Generated Files
+
+```text
+id_rsa
+id_rsa.pub
+```
+
+### Advantages
+
+- Supported by almost all systems
+- Good compatibility with older servers and applications
+- Widely used in enterprise environments
+
+### Disadvantages
+
+- Larger key size
+- Slower authentication and signing
+- Requires 3072 or 4096-bit keys for strong security
+
+---
+
+## ED25519
+
+### Generate ED25519 Key
+
+```bash
+ssh-keygen -t ed25519
+```
+
+### Generated Files
+
+```text
+id_ed25519
+id_ed25519.pub
+```
+
+### Advantages
+
+- Smaller key size
+- Faster authentication
+- Strong modern cryptography
+- Better security-to-key-size ratio
+- Faster key generation
+
+### Disadvantages
+
+- May not be supported on very old systems
+- Some legacy devices and SSH clients may not support it
+
+---
+
+## AWS EC2 Recommendation
+
+### Use ED25519 When
+
+- Deploying modern Linux servers
+- Using recent OpenSSH versions
+- Security and performance are priorities
+
+### Use RSA When
+
+- Working with legacy systems
+- Compatibility is required
+- Older SSH clients or devices are involved
+
+---
+
+## Interview Answer
+
+**RSA** is based on integer factorization and typically uses 2048, 3072, or 4096-bit keys. It offers broad compatibility but requires larger key sizes and has slower performance.
+
+**ED25519** is based on elliptic curve cryptography and provides stronger security with smaller keys, faster authentication, and better performance. It is the recommended SSH key algorithm for modern environments.
 
 ## ⚠️ Important
 
@@ -85,18 +177,6 @@ EC2 instances are accessed securely using key pairs and controlled using securit
 
 * Initially ignored the region selection ⚠️
 * Confused between RSA and ED25519 key types
-* Difference between both keys:
-| Feature           | RSA                        | ED25519                     |
-| ----------------- | -------------------------- | --------------------------- |
-| Security          | Good (with 3072/4096 bits) | Very strong                 |
-| Key Size          | Large                      | Small                       |
-| Performance       | Slower                     | Faster                      |
-| Key Generation    | Slower                     | Faster                      |
-| Public Key Length | Longer                     | Shorter                     |
-| Compatibility     | Supported everywhere       | Supported on modern systems |
-| Recommended Today | Yes (legacy compatibility) | Preferred                   |
-
-
 ---
 
 ## 🔧 Fix / Learning
