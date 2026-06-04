@@ -85,6 +85,17 @@ EC2 instances are accessed securely using key pairs and controlled using securit
 
 * Initially ignored the region selection ⚠️
 * Confused between RSA and ED25519 key types
+* Difference between both keys:
+| Feature           | RSA                        | ED25519                     |
+| ----------------- | -------------------------- | --------------------------- |
+| Security          | Good (with 3072/4096 bits) | Very strong                 |
+| Key Size          | Large                      | Small                       |
+| Performance       | Slower                     | Faster                      |
+| Key Generation    | Slower                     | Faster                      |
+| Public Key Length | Longer                     | Shorter                     |
+| Compatibility     | Supported everywhere       | Supported on modern systems |
+| Recommended Today | Yes (legacy compatibility) | Preferred                   |
+
 
 ---
 
