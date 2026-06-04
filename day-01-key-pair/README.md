@@ -203,3 +203,39 @@ Create an RSA key pair named datacenter-kp in us-east-1 using EC2
 ## ✅ Outcome
 
 Key pair successfully created and ready for EC2 usage 🚀
+
+# 🎤 Interview Questions & Answers
+
+### 1. What is an AWS Key Pair?
+
+**Answer:**
+An AWS Key Pair is a set of cryptographic keys used to securely connect to EC2 instances.
+
+---
+
+### 2. Why is a Key Pair required for EC2 instances?
+
+**Answer:**
+It allows secure SSH authentication without using passwords.
+
+---
+
+### 3. What is the difference between Public Key and Private Key?
+
+**Answer:**
+- Public Key → Stored in AWS
+- Private Key → Downloaded as a .pem file and used to connect to the instance
+
+---
+
+### 4. Are AWS Key Pairs Region-specific?
+
+**Answer:**
+Yes. Key Pairs are Region-specific and can be used in any Availability Zone within that Region.
+
+---
+
+### 5. What is the difference between RSA and ED25519?
+
+**Answer:**
+RSA provides broad compatibility, while ED25519 offers better security and performance with smaller key sizes.
