@@ -4,7 +4,7 @@
 
 ## 🧠 Task
 
-Enable versioning for the S3 bucket `nautilus-s3-10273` to ensure data protection and recovery.
+Enable versioning for the S3 bucket `abhsiehk-s3-0618` to ensure data protection and recovery.
 
 ---
 
