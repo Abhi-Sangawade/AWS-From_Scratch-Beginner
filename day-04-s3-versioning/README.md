@@ -20,7 +20,7 @@ Enable versioning for the S3 bucket `abhishek-s3-0618` to ensure data protection
 
 * Service: Amazon S3
 * Region: us-east-1
-* Bucket Name: `nautilus-s3-10273`
+* Bucket Name: `abhishek-s3-0618`
 
 ---
 
@@ -38,7 +38,7 @@ Enable versioning for the S3 bucket `abhishek-s3-0618` to ensure data protection
 
 ### 3. Select Bucket
 
-* Click: `nautilus-s3-10273`
+* Click: `abhishek-s3-0618`
 
 ### 4. Enable Versioning
 
@@ -60,7 +60,7 @@ aws s3api put-bucket-versioning --bucket nautilus-s3-10273 --versioning-configur
 
 ```bash
 aws s3api put-bucket-versioning \
-  --bucket nautilus-s3-10273 \
+  --bucket abhishek-s3-0618 \
   --versioning-configuration Status=Enabled
 ```
 
@@ -71,7 +71,7 @@ aws s3api put-bucket-versioning \
 ## 🔍 Verification
 
 ```bash
-aws s3api get-bucket-versioning --bucket nautilus-s3-10273
+aws s3api get-bucket-versioning --bucket abhishek-s3-0618
 ```
 
 Expected Output:
